@@ -36,18 +36,24 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
+                                    <th>Дата</th>
                                     <th>Телефон</th>
+                                    <th>Email</th>
                                     <th>Адрес</th>
                                     <th>Информация о заказе</th>
+                                    <th>Компания</th>
                                     <th>Стоимость заказа</th>
                                     <th>Статус заказа</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="phone in phones | filter: {$:query, status:false}">
+                                    <td>{{phone.Date}}</td>
                                     <td>{{phone.Phone}}</td>
+                                    <td>{{phone.Mail}}</td>
                                     <td>г. {{phone.Sity}}, ул. {{phone.Street}} д. {{phone.NumberHome}} кв. {{phone.numberApartment}}</td>
                                     <td>Количество комнат: {{phone.NumberRoom}}, Санузлов: {{phone.NumberWC}}, Тип уборки: {{phone.NumberTypeClean}}, Площадь: {{phone.NumberScale}}</td>
+                                    <td>{{phone.Company}} - Clean-is</td>
                                     <td>{{phone.Price}}</td>
                                     <td>{{phone.status}}</td>
                                 </tr>
