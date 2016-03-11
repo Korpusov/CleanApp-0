@@ -3,36 +3,6 @@
 
 /* Controllers */
 
-var app = angular.module('app', ["firebase", "ngRoute"]);
-
-
-// app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { 
-//     // $routeProvider
-//     //     .when("/", {
-//     //         templateUrl: "app/index.html",
-//     //         controller: "Table"
-//     //     })
-//     //     .when("/calendar", {
-//     //         templateUrl: "calendar.html",
-//     //         controller: "calendar"
-//     //     })
-//     //     .when("/mailbox", {
-//     //         templateUrl: "mailbox.html",
-//     //         controller: "mailbox"
-//     //     })
-//     //     .when("/login", {
-//     //         templateUrl: "login.html",
-//     //         controller: "login"
-//     //     })
-//     //     .when("/register", {
-//     //         templateUrl: "register.html",
-//     //         controller: "register"
-//     //     })
-//     //     // .otherwise({
-//     //     //     redirectTo: "/"
-//     //     // })
-// }])
-
 app.controller('Table', ["$scope", "$firebaseObject", function($scope, $firebaseObject) {
     // create a synchronized array with a customized version
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
     <!-- <base href="/"/> -->
@@ -24,7 +24,7 @@
     <script src="bower_components/angular/angular.js"></script>
 </head>
 
-<body ng-app="app" class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" >
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -317,7 +317,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
-                        <a href="#/index">
+                        <a href="#/table">
                             <i class="fa fa-table"></i> <span>Tables</span>
                             <i class="fa fa-angle"></i>
                         </a>
@@ -335,90 +335,32 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fa fa-folder"></i> <span>Examples</span>
-                            <i class="fa fa-angle-left pull-right"></i>
+                        <a href="#/login">
+                            <i class="fa fa-circle-o"></i > <span>Login</span>
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="#/login"><i class="fa fa-circle-o"></i> Login</a></li>
-                            <li><a href="#/register"><i class="fa fa-circle-o"></i> Register</a></li>
-                        </ul>
+                    </li>
+                    <li>
+                        <a href="#/register">
+                            <i class="fa fa-circle-o"></i > <span>Register</span>
+                        </a>
                     </li>
                     <!-- <li class="header">LABELS</li>
-                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a>
+                    </li>
                     <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
                     <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> -->
                 </ul>
+
             </section>
             <!-- /.sidebar -->
         </aside>
-        
-        <div class="content-wrapper">
-            <!-- <div ng-view></div> -->
-            <section class="content-header">
-                <h1>
-            Таблица клиентов
-          </h1>
-                <!-- <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Tables</a></li>
-    <li class="active">Таблица клиентов</li>
-</ol> -->
-            </section>
-            <!-- Content Header (Page header) -->
-            <!-- Main content -->
-            <section class="content" ng-controller="Table">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="box">
-                            <div class="box-header">
-                                <h3 class="box-title"></h3>
-                            </div>
-                            <div class="box-header">
-                                <p>Поиск:
-                                    <input type="text" ng-model="query">
-                                </p>
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <table id="example2" class="table table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Дата</th>
-                                            <th>Телефон</th>
-                                            <th>Email</th>
-                                            <th>Адрес</th>
-                                            <th>Информация о заказе</th>
-                                            <th>Компания</th>
-                                            <th>Стоимость заказа</th>
-                                            <th>Статус заказа</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="phone in phones | filter: {$:query, status:false}">
-                                            <td>{{phone.Date}}</td>
-                                            <td>{{phone.Phone}}</td>
-                                            <td>{{phone.Mail}}</td>
-                                            <td>г. {{phone.Sity}}, ул. {{phone.Street}} д. {{phone.NumberHome}} кв. {{phone.numberApartment}}</td>
-                                            <td>Количество комнат: {{phone.NumberRoom}}, Санузлов: {{phone.NumberWC}}, Тип уборки: {{phone.NumberTypeClean}}, Площадь: {{phone.NumberScale}}</td>
-                                            <td>{{phone.Company}} - Clean-is</td>
-                                            <td>{{phone.Price}}</td>
-                                            <td ng-init="status = phone.status ? 'Не подтвержден' : 'Выполнен'" ng-class="{'label-success':!phone.status, 'label-warning': phone.status}">{{status}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <footer class="main-footer">
+        <footer ng-view class="main-footer" >
             <div class="pull-right hidden-xs">
-                <b>Version</b> 2.3.0
+                <b>Version</b> 1.0.0
             </div>
-            <strong>Clean-app</a>.</strong> All rights reserved.
+            <strong >Clean-app</a>.</strong > All rights reserved.
         </footer>
+        <div ></div>
         <!-- jQuery 2.1.4 -->
         <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
@@ -438,6 +380,7 @@
         <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
         <!-- AngularFire -->
         <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+        <script src="js/app.js"></script>
         <script src="js/controllers.js"></script>
 </body>
 
