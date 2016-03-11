@@ -23,4 +23,20 @@ app.controller('Table', ["$scope", "$firebaseObject", function($scope, $firebase
 app.controller("calendar", ["$scope", "$firebaseObject", function($scope, $firebaseObject) {}]);
 app.controller("mailbox", ["$scope", "$firebaseObject", function($scope, $firebaseObject) {}]);
 app.controller("register", ["$scope", "$firebaseObject", function($scope, $firebaseObject) {}]);
-app.controller("login", ["$scope", "$firebaseObject", function($scope, $firebaseObject) {}]);
+app.controller("login", ["$scope", "$firebaseObject", function($scope, $firebaseObject) {
+    $scope.submit = function() {
+        console.log($scope.email + $scope.password);
+        var ref = new Firebase("https://cleanapps.firebaseio.com");
+        ref.authWithPassword({
+            email: $scope.email,
+            password: $scope.password
+        }, function(error, authData) {
+            if (error) {
+                alert("Login Failed!");
+            } else {
+                console.log('ok');
+                document.location.href='#/table';
+            }
+        });
+    }
+}]);

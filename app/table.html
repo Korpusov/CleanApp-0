@@ -44,9 +44,9 @@
                                 <td>{{phone.Mail}}</td>
                                 <td>г. {{phone.Sity}}, ул. {{phone.Street}} д. {{phone.NumberHome}} кв. {{phone.numberApartment}}</td>
                                 <td>Количество комнат: {{phone.NumberRoom}}, Санузлов: {{phone.NumberWC}}, Тип уборки: {{phone.NumberTypeClean}}, Площадь: {{phone.NumberScale}}</td>
-                                <td>{{phone.Company}} - Clean-is</td>
+                                <td>{{phone.Company}} </td>
                                 <td>{{phone.Price}}</td>
-                                <td ng-init="status = phone.status ? 'Не подтвержден' : 'Выполнен'" ng-class="{'label-success':!phone.status, 'label-warning': phone.status}">{{status}}</td>
+                                <td ><button ng-init="status = phone.status ? 'Не подтвержден' : 'Выполнен'" ng-class="{'btn-success':!phone.status, 'btn-warning': phone.status}" ng-click="confirm" class="btn ">{{status}}</button></td>
                             </tr>
                         </tbody>
                     </table>
