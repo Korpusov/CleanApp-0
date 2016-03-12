@@ -11,13 +11,23 @@ app.controller('Table', ["$scope", "$firebaseObject", function($scope, $firebase
 
     // to take an action after the data loads, use the $loaded() promise
     $scope.phones = []
-    obj.$loaded().then(function() {
 
+    obj.$loaded().then(function() {
         // To iterate the key/value pairs of the object, use angular.forEach()
         angular.forEach(obj, function(value, key) {
             $scope.phones.push(value)
+                //$scope.phones.push("id":key)
         });
     });
+
+    $scope.confirm = function(id) {
+
+        var idRef = ref.child(id)
+        idRef.update({
+            "status": "true"
+        });
+    }
+
 }]);
 
 app.controller("calendar", ["$scope", "$firebaseObject", function($scope, $firebaseObject) {}]);
@@ -35,7 +45,7 @@ app.controller("login", ["$scope", "$firebaseObject", function($scope, $firebase
                 alert("Login Failed!");
             } else {
                 console.log('ok');
-                document.location.href='#/table';
+                document.location.href = '#/table';
             }
         });
     }
